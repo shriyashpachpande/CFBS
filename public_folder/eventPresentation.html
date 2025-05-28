@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Sections</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer1.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 350px;
+            width: 100%;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;transition: transform 0.6s ease;
+        }
+        .card:hover img {
+      transform: scale(1.1);
+    }
+        .card p {
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        @keyframes fadeUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                max-width: 100%;
+            }
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">CFBS</div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Work Gallery</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+
+        <div class="quote" id="quoteLink">
+            <a href="#">Request Quote</a>
+        </div>
+    </div><br><br>
+    <div class="container">
+        <div class="card"><a href="games/Auditorium.html">
+            <img src="CFBS/11.jpg" alt="Auditorium ">
+            <p>Auditorium </p></a>
+        </div>
+        <div class="card"><a href="games/Conference.html">
+            <img src="CFBS/22.jpg" alt="Conference Room">
+            <p>Conference Room</p></a>
+        </div>
+        <div class="card"><a href="games/Open_Stage.html">
+            <img src="CFBS/33.jpg" alt="Open Stage / Amphitheater">
+            <p>Open Stage / Amphitheater</p></a>
+        </div>
+    </div><br><br><br>
+    <footer>
+        <div class="footer-column visible">
+            <div class="Flogo visible">CFBS</div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Wedding Decor</a></li>
+                <li><a href="#">Wedding Management</a></li>
+                <li><a href="#">Conference Management</a></li>
+                <li><a href="#">Product Launch</a></li>
+                <li><a href="#">Award Ceremonies</a></li>
+                <li><a href="#">Mice</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Virtual Event</a></li>
+                <li><a href="#">Exhibition & Trade Fair</a></li>
+                <li><a href="#">Artist Management</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Pages</h3>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="footer.js"></script>
+</body>
+
+</html>

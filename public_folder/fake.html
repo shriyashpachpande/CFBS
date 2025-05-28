@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sport Booking</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      padding: 20px;
+    }
+
+    .image-container {
+      flex: 1;
+      max-width: 500px;
+      overflow: hidden;
+      border-radius: 12px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInImage 1s ease-out forwards;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.5s ease;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      flex: 1;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInForm 1s ease-out 0.8s forwards;
+    }
+
+    form .form-group {
+      opacity: 0;
+      transform: translateX(50px);
+      animation: slideInRight 0.5s ease-out forwards;
+    }
+
+    form .form-group:nth-child(1) { animation-delay: 1.2s; }
+    form .form-group:nth-child(2) { animation-delay: 1.4s; }
+    form .form-group:nth-child(3) { animation-delay: 1.6s; }
+    form .form-group:nth-child(4) { animation-delay: 1.8s; }
+    form .form-group:nth-child(5) { animation-delay: 2.0s; }
+    form .form-group:nth-child(6) { animation-delay: 2.2s; }
+    form .form-group:nth-child(7) { animation-delay: 2.4s; }
+
+    form input,
+    form select,
+    form button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInImage {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInForm {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInRight {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Image -->
+    <div class="image-container">
+      <img src="CFBS/22.jpg" alt="Sports Facility" />
+    </div>
+
+    <!-- Form -->
+    <form id="bookingForm">
+      <div class="form-group"><input type="text" name="studentId" placeholder="Student ID" required /></div>
+      <div class="form-group"><input type="text" name="studentName" placeholder="Your Name" required /></div>
+      <div class="form-group">
+        <select name="sport" id="sportSelect" required>
+          <option value="Cricket">Cricket</option>
+          <option value="Football">Football</option>
+          <option value="Badminton">Badminton</option>
+          <option value="Volleyball">Volleyball</option>
+          <option value="Basketball">Basketball</option>
+          <option value="Table Tennis">Table Tennis</option>
+          <option value="Hockey">Hockey</option>
+          <option value="Kabbadi">Kabbadi</option>
+          <option value="Tennis">Tennis</option>
+        </select>
+      </div>
+      <div class="form-group"><input type="text" id="dateInput" name="date" placeholder="Select Date" required /></div>
+      <div class="form-group"><input type="text" id="startTime" name="startTime" placeholder="Start Time" required /></div>
+      <div class="form-group"><input type="text" id="endTime" name="endTime" placeholder="End Time" required /></div>
+      <div class="form-group"><button type="submit">Book</button></div>
+      <div id="message"></div>
+    </form>
+  </div>
+
+  <script>
+    // Fix the sport for the current page
+    const currentSport = "Cricket";
+    const sportSelect = document.getElementById("sportSelect");
+    Array.from(sportSelect.options).forEach(option => {
+      option.selected = option.value === currentSport;
+      option.disabled = option.value !== currentSport;
+    });
+
+    // Time picker references
+    let startTimePicker, endTimePicker;
+
+    // Date Picker
+    flatpickr("#dateInput", {
+      minDate: "today",
+      maxDate: new Date().fp_incr(30),
+      defaultDate: "today",
+      dateFormat: "Y-m-d",
+      onChange: function (selectedDates, dateStr) {
+        const today = new Date();
+        const selected = new Date(dateStr);
+        const todayStr = today.toISOString().slice(0, 10);
+
+        if (dateStr === todayStr) {
+          const now = new Date();
+          const hour = now.getHours();
+          const min = now.getMinutes() + 1;
+          const minTime = `${String(hour).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`;
+          startTimePicker.set("minTime", minTime);
+          endTimePicker.set("minTime", minTime);
+        } else {
+          startTimePicker.set("minTime", "00:00");
+          endTimePicker.set("minTime", "00:00");
+        }
+      }
+    });
+
+    startTimePicker = flatpickr("#startTime", {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24hr: true,
+      defaultHour: new Date().getHours() + 1
+    });
+
+    endTimePicker = flatpickr("#endTime", {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24hr: true,
+      defaultHour: new Date().getHours() + 2
+    });
+
+    // Submit handler
+    document.getElementById('bookingForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      const response = await fetch('/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      const msgDiv = document.getElementById('message');
+      msgDiv.textContent = result.message;
+      msgDiv.style.color = response.ok ? 'green' : 'red';
+    });
+  </script>
+</body>
+</html>

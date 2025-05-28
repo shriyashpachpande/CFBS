@@ -1,0 +1,132 @@
+<!-- <form id="bookingForm">
+    <select name="sport" required>
+      <option value="">Choose Sport</option>
+      <option value="cricket">Cricket</option>
+      <option value="football">Football</option>
+      
+    </select>
+  
+    <input type="text" name="ground" placeholder="Ground Name" required />
+    <input type="date" name="date" required />
+    <input type="time" name="start" required />
+    <input type="time" name="end" required />
+  
+    <button type="submit">Book Now</button>
+  </form>
+  
+  <script>
+  document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+  
+    const formData = new FormData(e.target);
+    const sport = formData.get('sport');
+    const ground = formData.get('ground');
+    const date = formData.get('date');
+    const timeSlot = `${formData.get('start')}-${formData.get('end')}`;
+  
+    const res = await fetch('/book', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId: 'USER_ID_HERE', sport, ground, date, timeSlot })
+    });
+  
+    const data = await res.json();
+    alert(data.message);
+  });
+  </script>
+   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Facility</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      margin: 50px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Book a Sports Facility</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Your Name" required><br>
+
+      <select id="sport" required>
+        <option value="">Select Sport</option>
+        <option value="Cricket">Cricket</option>
+        <option value="Football">Football</option>
+        <option value="Basketball">Basketball</option>
+        <!-- Add more sports -->
+      </select><br>
+
+      <input type="date" id="date" required><br>
+
+      <select id="time" required>
+        <option value="">Select Time Slot</option>
+        <option value="16:00-17:00">4–5 PM</option>
+        <option value="17:00-18:00">5–6 PM</option>
+        <!-- Add more time slots -->
+      </select><br>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <script src="js/booking.js"></script>
+</body>
+
+</html>

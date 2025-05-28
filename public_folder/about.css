@@ -1,0 +1,213 @@
+body,
+html {
+    font-family: 'Arial', sans-serif;
+
+}
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.content {
+    max-width: 700px;
+}
+
+.wrapper .content h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.wrapper .content p {
+    font-size: 1.0rem;
+    line-height: 1.6;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 0;
+    padding: 0 250px;
+    opacity: 0;
+    transition: all 1.2s ease;
+}
+
+.section.animate-top {
+    transform: translateY(-60px);
+}
+
+.section.animate-bottom {
+    transform: translateY(60px);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text-box,
+.image-box {
+    flex: 1 1 45%;
+    margin: 20px;
+}
+
+.text-box h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.text-box span {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.text-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.image-box {
+    width: 100%;
+    perspective: 1000px;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    display: block;
+}
+
+@media screen and (max-width: 1200px) {
+    .section {
+        padding: 0 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        padding: 0 30px;
+        flex-direction: column;
+    }
+
+    .text-box,
+    .image-box {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .text-box h2 {
+        font-size: 28px;
+    }
+
+    .wrapper .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .wrapper .content p {
+        font-size: 1rem;
+    }
+}
+
+/* ///////////////////////////// Looking forrr.....//////////////////// */
+
+.collaboration-epic {
+  background-color: #c62a7a; /* Background color from image */
+  color: white;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+  animation: epicFadeIn 1.5s ease-out;
+}
+
+.collaboration-content {
+  max-width: 800px;
+  margin-left: 250px;
+}
+
+.collaboration-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.collaboration-content a {
+  text-decoration: none;
+  padding: 20px 30px;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  border: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.collaboration-content a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Epic animation */
+@keyframes epicFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .collaboration-content {
+    margin-left: 40px;
+  }
+
+  .collaboration-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .collaboration-content a {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collaboration-content {
+    margin-left: 20px;
+  }
+
+  .collaboration-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .collaboration-content a {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+}

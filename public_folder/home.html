@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .responsive-heading {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      font-weight: bold;
+      color: white;
+      line-height: 1.2;
+      padding-left: 150px;
+      text-align: left;
+      max-width: 800px;
+    }
+
+    @media (max-width: 768px) {
+      .responsive-heading {
+        padding-left: 20px;
+        /* chhoti screen ke liye kam gap */
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="logo">CFBS</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="#">Services</a>
+      <a href="#">Work Gallery</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+
+    <div class="quote" id="quoteLink">
+      <a href="#">Request Quote</a>
+    </div>
+  </div>
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="images/frontvideo1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="content"> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="responsive-heading">
+      MGM'S CAMPUS<br />
+      FACILITY BOOKING<br />
+      & MANAGEMENT
+    </div>
+
+    <div class="custom-buttons">
+      <button class="btn">Let’s book</button>
+    </div>
+  </div>
+  <div class="experience-section">
+    <div class="experience-left">
+      <p>
+        Providing Campus Facility Booking System in MGM COEN. In this when you book any one our service then you
+        should be check is it available or not?. And service is confirm by the Sir.
+      </p>
+    </div>
+    <div class="experience-right">
+      <div class="live-time" id="liveTime"></div>
+      <div class="sub-text">Live Time</div>
+    </div>
+  </div>
+
+
+
+
+  <br><br><br>
+  <div class="card-grid">
+    <div class="card"><a href="sports.html">
+        <img src="CFBS/1.png" alt="Event 1">
+        <div class="card-content">
+          <h3>Sports</h3>
+          <p>Playing Games on the Ground</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="card"><a href="eventPresentation.html">
+      <img src="CFBS/2.png" alt="Event 2">
+      <div class="card-content">
+        <h3>Event & Presentation Facilities</h3>
+        <p>College Events </p>
+    </a>
+  </div>
+  </div>
+
+  <div class="card"><a href="academic_facilities.html" style="color: default;">
+      <img src="CFBS/3.png" alt="Event 3">
+      <div class="card-content">
+        <h3>Academic Facilities</h3>
+        <p>Regular classes, guest lectures</p>
+    </a>
+  </div>
+  </div>
+
+  <div class="card">
+    <img src="CFBS/4.png" alt="Event 4">
+    <div class="card-content">
+      <h3>Library </h3>
+      <p>Study Room</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="CFBS/5.png" alt="Event 5">
+    <div class="card-content">
+      <h3>Advanz pharma meet</h3>
+      <p>Conferences</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="CFBS/4.png" alt="Event 6">
+    <div class="card-content">
+      <h3>Equirus 16th anniversary</h3>
+      <p>Conferences</p>
+    </div>
+  </div>
+  </div>
+
+
+  <br>
+  <!--////////////////////////////////////here is the annimation///////////////////////// -->
+  <div class="slider-container">
+    <div class="title">Hear from trusted clients</div>
+    <div id="slider">
+      <div class="testimonial active">
+        <div class="profile">
+          <img src="CFBS/44.jpg" alt="Rakesh Malhotra">
+          <div class="profile-details">
+            <h3>Rakesh Malhotra</h3>
+            <span>Customer</span>
+          </div>
+        </div>
+        <div class="text">
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repellendus animi laboriosam quibusdam
+          aperiam, quo, quia iure commodi doloribus a libero autem porro cum odit ab minima dolores ut harum!
+          Voluptate sed ipsum, nobis, fugiat reprehenderit possimus inventore magnam at deleniti ullam molestias facere
+          in quaerat? Voluptatem aut asperiores itaque quo, perferendis quae alias deserunt reiciendis, voluptates iste,
+          dolore fugiat."
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="profile">
+          <img src="CFBS/22.jpg" alt="Anita Verma">
+          <div class="profile-details">
+            <h3>Anita Verma</h3>
+            <span>Client</span>
+          </div>
+        </div>
+        <div class="text">
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repellendus animi laboriosam quibusdam
+          aperiam, quo, quia iure commodi doloribus a libero autem porro cum odit ab minima dolores ut harum!
+          Voluptate sed ipsum, nobis, fugiat reprehenderit possimus inventore magnam at deleniti ullam molestias facere
+          in quaerat? Voluptatem aut asperiores itaque quo, perferendis quae alias deserunt reiciendis, voluptates iste,
+          dolore fugiat."
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="profile">
+          <img src="CFBS/11.jpg" alt="Sameer Gupta">
+          <div class="profile-details">
+            <h3>Sameer Gupta</h3>
+            <span>Customer</span>
+          </div>
+        </div>
+        <div class="text">
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repellendus animi laboriosam quibusdam
+          aperiam, quo, quia iure commodi doloribus a libero autem porro cum odit ab minima dolores ut harum!
+          Voluptate sed ipsum, nobis, fugiat reprehenderit possimus inventore magnam at deleniti ullam molestias facere
+          in quaerat? Voluptatem aut asperiores itaque quo, perferendis quae alias deserunt reiciendis, voluptates iste,
+          dolore fugiat."
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="profile">
+          <img src="CFBS/22.jpg" alt="Pooja Sharma">
+          <div class="profile-details">
+            <h3>Pooja Sharma</h3>
+            <span>Client</span>
+          </div>
+        </div>
+        <div class="text">
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repellendus animi laboriosam quibusdam
+          aperiam, quo, quia iure commodi doloribus a libero autem porro cum odit ab minima dolores ut harum!
+          Voluptate sed ipsum, nobis, fugiat reprehenderit possimus inventore magnam at deleniti ullam molestias facere
+          in quaerat? Voluptatem aut asperiores itaque quo, perferendis quae alias deserunt reiciendis, voluptates iste,
+          dolore fugiat."
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="profile">
+          <img src="CFBS/33.jpg" alt="Rahul Mehta">
+          <div class="profile-details">
+            <h3>Rahul Mehta</h3>
+            <span>Customer</span>
+          </div>
+        </div>
+        <div class="text">
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repellendus animi laboriosam quibusdam
+          aperiam, quo, quia iure commodi doloribus a libero autem porro cum odit ab minima dolores ut harum!
+          Voluptate sed ipsum, nobis, fugiat reprehenderit possimus inventore magnam at deleniti ullam molestias facere
+          in quaerat? Voluptatem aut asperiores itaque quo, perferendis quae alias deserunt reiciendis, voluptates iste,
+          dolore fugiat."
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="profile">
+          <img src="CFBS/44.jpg" alt="Nisha Arora">
+          <div class="profile-details">
+            <h3>Nisha Arora</h3>
+            <span>Client</span>
+          </div>
+        </div>
+        <div class="text">
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repellendus animi laboriosam quibusdam
+          aperiam, quo, quia iure commodi doloribus a libero autem porro cum odit ab minima dolores ut harum!
+          Voluptate sed ipsum, nobis, fugiat reprehenderit possimus inventore magnam at deleniti ullam molestias facere
+          in quaerat? Voluptatem aut asperiores itaque quo, perferendis quae alias deserunt reiciendis, voluptates iste,
+          dolore fugiat."
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="profile">
+          <img src="CFBS/55.jpg" alt="Deepak Joshi">
+          <div class="profile-details">
+            <h3>Deepak Joshi</h3>
+            <span>Customer</span>
+          </div>
+        </div>
+        <div class="text">
+          "Eventplus is my go-to event planner now. Hassle-free and high-quality experience every time."
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="arrow" onclick="prevSlide()">&#8592;</div>
+      <span id="counter">1 - 7</span>
+      <div class="arrow" onclick="nextSlide()">&#8594;</div>
+    </div>
+  </div>
+  <br><br><br><br><br>
+
+
+  <section class="video-section">
+    <div class="video-flip-container" id="flipVideo">
+      <div class="video-inner">
+        <video autoplay muted loop playsinline>
+          <source src="images/reel.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+
+  <br><br><br><br>
+
+
+  <div class="connect-section">
+    <div class="connect-box">
+      <p><em>Looking for collaboration?</em></p>
+      <h2>CONNECT NOW</h2>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="connect-box">
+      <p>Baba Niwas, Guru Nagar, Nanded </p>
+      <strong>8830066800 / 9322462481 <br> / 9146644780 </strong>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="connect-box">
+      <p>Wanna Have a Chat?<br>connect on email</p>
+      <strong>smc@gmail.com</strong>
+    </div>
+  </div>
+  <br><br><br>
+
+  <!-- /////////////////////////////////////FOOTER///////////////////////////// -->
+  <footer>
+    <div class="footer-column">
+      <div class="Flogo">CFBS</div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Wedding Management</a></li>
+        <li><a href="#">Conference Management</a></li>
+        <li><a href="#">Product Launch</a></li>
+        <li><a href="#">Award Ceremonies</a></li>
+        <li><a href="#">Mice</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#">Virtual Event</a></li>
+        <li><a href="#">Exhibition & Trade Fair</a></li>
+        <li><a href="#">Artist Management</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+
+  <script src="file.js"></script>
+</body>
+
+</html>

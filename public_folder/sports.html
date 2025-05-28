@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Services</title>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer1.css">
+  <style>
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease-out forwards;
+      transition: box-shadow 0.6s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .card:hover img {
+      transform: scale(1.1);
+    }
+    .card:nth-child(1) { animation-delay: 0s; }
+    .card:nth-child(2) { animation-delay: 0.1s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.3s; }
+    .card:nth-child(5) { animation-delay: 0.4s; }
+    .card:nth-child(6) { animation-delay: 0.5s; }
+    .card:nth-child(7) { animation-delay: 0.6s; }
+    .card:nth-child(8) { animation-delay: 0.7s; }
+    .card:nth-child(9) { animation-delay: 0.8s; }
+
+    .card h2 {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    a{
+      text-decoration: none;
+      color:black;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">CFBS</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Work Gallery</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <div class="quote" id="quoteLink">
+        <a href="#">Request Quote</a>
+    </div>
+</div><br><br>
+  <h1>Sports Services</h1>
+  <div class="grid">
+    <div class="card"><a href="games/cricket.html">
+      <img src="CFBS/1.png" alt="Cricket Ground">
+      <h2>Cricket Ground</h2></a>
+    </div>
+    <div class="card"><a href="games/footboll.html">
+      <img src="CFBS/11.jpg" alt="Football Ground">
+      <h2>Football Ground</h2></a>
+    </div>
+    <div class="card"><a href="games/basketball.html">
+      <img src="CFBS/2.png" alt="Basketball Ground">
+      <h2>Basketball Ground</h2></a>
+    </div>
+    <div class="card"><a href="games/Volleyball.html">
+      <img src="CFBS/22.jpg" alt="Volleyball Ground">
+      <h2>Volleyball Ground</h2></a>
+    </div>
+    <div class="card"><a href="games/Badminton.html">
+      <img src="CFBS/3.png" alt="Badminton Ground">
+      <h2>Badminton Ground</h2></a>
+    </div>
+    <div class="card"><a href="games/Carrom.html">
+      <img src="CFBS/33.jpg " alt="Carrom">
+      <h2>Carrom</h2></a>
+    </div>
+    <div class="card"><a href="games/Kabbadi.html">
+      <img src="CFBS/44.jpg" alt="Kabbadi">
+      <h2>Kabbadi </h2></a>
+    </div>
+    <div class="card"><a href="games/Thug_Of_War_Ground.html">
+      <img src="CFBS/5.png" alt="Thug Of War Ground">
+      <h2>Thug Of War Ground</h2></a>
+    </div>
+    <div class="card"><a href="games/Carrom.html">
+      <img src="CFBS/55.jpg" alt="Chess">
+      <h2>Chess </h2></a>
+    </div>
+  </div>
+  <br><br><br>
+  <footer>
+    <div class="footer-column visible">
+        <div class="Flogo visible">CFBS</div>
+    </div>
+
+    <div class="footer-column">
+        <h3>Services</h3>
+        <ul>
+            <li><a href="#">Wedding Decor</a></li>
+            <li><a href="#">Wedding Management</a></li>
+            <li><a href="#">Conference Management</a></li>
+            <li><a href="#">Product Launch</a></li>
+            <li><a href="#">Award Ceremonies</a></li>
+            <li><a href="#">Mice</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Services</h3>
+        <ul>
+            <li><a href="#">Virtual Event</a></li>
+            <li><a href="#">Exhibition & Trade Fair</a></li>
+            <li><a href="#">Artist Management</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Pages</h3>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Company</h3>
+        <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </div>
+  </footer>
+  <script src="footer.js"></script>
+</body>
+</html>

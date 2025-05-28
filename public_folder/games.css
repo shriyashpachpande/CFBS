@@ -1,0 +1,178 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Large outlined circle */
+        .cursor-outline {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px 150px;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            flex: 1.2;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 12px;
+            padding: 50px;
+            opacity: 0;box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            transform: translateY(30px);
+            animation: fadeInImage 1s ease-out forwards;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        form {
+            flex: 1;
+            background: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInForm 1s ease-out 0.8s forwards;
+        }
+
+        form .form-group {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        form .form-group:nth-child(1) {
+            animation-delay: 1.2s;
+        }
+
+        form .form-group:nth-child(2) {
+            animation-delay: 1.4s;
+        }
+
+        form .form-group:nth-child(3) {
+            animation-delay: 1.6s;
+        }
+
+        form .form-group:nth-child(4) {
+            animation-delay: 1.8s;
+        }
+
+        form .form-group:nth-child(5) {
+            animation-delay: 2.0s;
+        }
+
+        form .form-group:nth-child(6) {
+            animation-delay: 2.2s;
+        }
+
+        form .form-group:nth-child(7) {
+            animation-delay: 2.4s;
+        }
+
+        form input,
+        form select,
+        form button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #000000;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background-color: #5e6267;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInImage {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInForm {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+
+            .image-container,
+            form {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    
+        H1{
+            font-weight: bold;
+            font-size: 65px;
+            text-align: center;color: #e32891;
+        }

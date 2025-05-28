@@ -1,0 +1,127 @@
+footer {
+    background-color: #000000;
+    color: #aaa !important ;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 180px;
+    margin: 10px 20px;
+  }
+
+  .footer-column h3 {
+    color: #fff;
+    margin-left: 40px;
+    margin-bottom: 30px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+  }
+
+  .footer-column ul li {
+    margin: 8px 0;
+  }
+
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #aaa;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #fff;
+  }
+
+  .Flogo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f73c8c;
+    position: relative;
+    display: inline-block;
+    animation: pulseLogo 2s infinite;text-align: center;
+    text-shadow: 0 0 10px #f73c8c, 0 0 20px #f73c8c;
+    width: 150px; height: 40px; border: 2px dashed  white;
+  }
+
+  @keyframes pulseLogo {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-column {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .Flogo {
+      font-size: 1.8rem;
+    }
+  }
+
+  .footer-column {
+    opacity: 0;
+    transform: translateY(40px) translateX(40px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .footer-column.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  
+  .Flogo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f73c8c;
+    text-align: center;
+    text-shadow: 0 0 10px #f73c8c, 0 0 20px #f73c8c;
+    width: 150px;
+    height: 40px;
+    border: 2px dashed white;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(40px) translateX(40px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .Flogo.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-column {
+      text-align: center;
+    }
+  }
+  
+
