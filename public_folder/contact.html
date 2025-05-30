@@ -11,32 +11,12 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="logo">CFBS</div>
-
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class="nav-links" id="navLinks">
-            <a href="home.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="#">Services</a>
-            <a href="#">Work Gallery</a>
-            <a href="contact.html">Contact us</a>
-        </div>
-
-        <div class="quote" id="quoteLink">
-            <a href="#">Request Quote</a>
-        </div>
-    </div>
+    <div id="navbarContainer"></div>
     <section class="contact-section">
         <div class="left-text">
             <h1>We’d love to<br />hear from you. </h1>
         </div>
-        <div class="right-text">
+        <div class="right-text"  >
             <p>Connect for<br />Campus Facility Booking<br /> System</p>
         </div>
     </section>
@@ -44,70 +24,73 @@
     <br><br>
     <section class="contact-form" id="contactForm">
         <h2>Send a message</h2>
-        <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="tel" placeholder="Phone">
-            <textarea placeholder="Message" required></textarea>
-            <div>
-                <!-- Replace with actual CAPTCHA widget -->
-                <div style="margin: 1rem 0;">
-                    <input type="checkbox" id="captcha"><label for="captcha"> I'm not a robot</label>
-                </div>
+        <form action="/contact" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone">
+            <textarea name="message" placeholder="Message" required></textarea>
+            <div style="margin: 1rem 0;">
+                <input type="checkbox" id="captcha" required>
+                <label for="captcha"> I'm not a robot</label>
             </div>
             <button type="submit">Send a message</button>
         </form>
+        
     </section>
 
 
 <br><br>
 
 <footer>
-    <div class="footer-column visible">
-        <div class="Flogo visible">CFBS</div>
+    <div class="footer-column">
+      <div class="Flogo">CFBS</div>
     </div>
 
     <div class="footer-column">
-        <h3>Services</h3>
-        <ul>
-            <li><a href="#">Wedding Decor</a></li>
-            <li><a href="#">Wedding Management</a></li>
-            <li><a href="#">Conference Management</a></li>
-            <li><a href="#">Product Launch</a></li>
-            <li><a href="#">Award Ceremonies</a></li>
-            <li><a href="#">Mice</a></li>
-        </ul>
+      <h3>Sport Services</h3>
+      <ul>
+        <li><a href="games/cricket.html">Cricket</a></li>
+        <li><a href="games/footboll.html">Football</a></li>        
+        <li><a href="games/basketball.html">Basketball</a></li>
+        <li><a href="games/Kabbadi.html">Kabbadi</a></li>
+        <li><a href="games/Carrom.html">Carrom</a></li>
+        <li><a href="games/Chess.html">Chess</a></li>
+      </ul>
     </div>
 
     <div class="footer-column">
-        <h3>Services</h3>
-        <ul>
-            <li><a href="#">Virtual Event</a></li>
-            <li><a href="#">Exhibition & Trade Fair</a></li>
-            <li><a href="#">Artist Management</a></li>
-        </ul>
+      <h3>Services</h3>
+      <ul>
+        <li><a href="games/Auditorium.html">Auditorium</a></li>
+        <li><a href="games/Conference.html">Conference</a></li>
+        <li><a href="games/Open_Stage.html">Open Stage</a></li>
+        <li><a href="games/Seminar.html">Seminar Room</a></li>
+        <li><a href="games/chemistrylab.html">Science Lab</a></li>
+      </ul>
     </div>
 
     <div class="footer-column">
-        <h3>Pages</h3>
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work Gallery</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="workgallery.html">Work Gallery</a></li>
+      </ul>
     </div>
 
     <div class="footer-column">
-        <h3>Company</h3>
-        <ul>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-        </ul>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="termsandconditions.html">Terms & Conditions</a></li>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+      </ul>
     </div>
   </footer>
 
   <script src="file.js"></script>
   <script src="footer.js"></script>
+  <script src="/js/loadNavbar.js"></script>
 </body>
 
 </html>
