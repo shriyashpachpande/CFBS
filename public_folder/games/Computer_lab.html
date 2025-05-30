@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-2 Card Layout with Zoom</title>
+    <link rel="stylesheet" href="../games.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer1.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+    
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px 100px;
+        }
+    
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
+            transition: transform 0.3s ease;
+        }
+    
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+    
+        .card:hover img {
+            transform: scale(1.1);
+        }
+    
+        .card h3 {
+            margin: 10px 15px 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+    
+        .card p {
+            margin: 0 15px 15px;
+            color: gray;
+            font-size: 0.95rem;
+        }
+    
+        a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+    
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        /* Staggered card animation delays */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+        .card:nth-child(5) { animation-delay: 1s; }
+    
+        /* RESPONSIVE DESIGN */
+    
+        @media (max-width: 992px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 30px 40px;
+            }
+    
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    
+        @media (max-width: 600px) {
+            .card-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+    
+            h1 {
+                font-size: 1.5rem;
+                margin-top: 20px;
+            }
+    
+            .card img {
+                height: 160px;
+            }
+    
+            .card h3 {
+                font-size: 1rem;
+            }
+    
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="navbarContainer"></div>
+    <br>
+    <h1>Computer Labs </h1>
+    
+    <div class="card-container">
+        <div class="card"><a href="computerLabA.html">
+            <img src="../CFBS/11.jpg" alt="Image 1" />
+            <h3>Lab A</h3>
+            <p>Computer Labs</p></a>
+        </div>
+        <div class="card"><a href="computerLabB.html">
+            <img src="../CFBS/22.jpg" alt="Image 2" />
+            <h3>Lab B</h3>
+            <p>Computer Labs</p></a>
+        </div>
+        <div class="card"><a href="ComputerLabC.html">
+            <img src="../CFBS/33.jpg" alt="Image 3" />
+            <h3>Lab C</h3>
+            <p>Computer Labs</p></a>
+        </div>
+        <div class="card"><a href="computerLabD.html">
+            <img src="../CFBS/44.jpg" alt="Image 4" />
+            <h3>Lab D</h3>
+            <p>Computer Labs</p></a>
+        </div>
+        <div class="card"><a href="computerPGLab.html">
+            <img src="../CFBS/55.jpg" alt="Image 5" />
+            <h3>PG Lab</h3>
+            <p>Computer Labs</p></a>
+        </div>
+    </div>
+    <br><br>
+    <footer>
+        <div class="footer-column">
+          <div class="Flogo">CFBS</div>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Sport Services</h3>
+          <ul>
+            <li><a href="cricket.html">Cricket</a></li>
+            <li><a href="basketball.html">Basketball</a></li>
+            <li><a href="footboll.html">Football</a></li>        
+            <li><a href="Kabbadi.html">Kabbadi</a></li>
+            <li><a href="Carrom.html">Carrom</a></li>
+            <li><a href="Chess.html">Chess</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="Auditorium.html">Auditorium</a></li>
+            <li><a href="Conference.html">Conference</a></li>
+            <li><a href="Open_Stage.html">Open Stage</a></li>
+            <li><a href="Seminar.html">Seminar Room</a></li>
+            <li><a href="chemistrylab.html">Science Lab</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../workgallery.html">Work Gallery</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../termsandconditions.html">Terms & Conditions</a></li>
+            <li><a href="../privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </footer>
+    <script src="Seminar.js"></script>
+    <script src="../footer.js"></script>
+    <script src="../js/loadNavbargames.js"></script>
+</body>
+
+</html>

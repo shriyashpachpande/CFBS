@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sport Booking</title>
+    <link rel="stylesheet" href="../games.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
+
+<body>
+    <div id="navbarContainer"></div>
+    
+    <h1>Open Stage </h1><hr>
+    <div class="container">
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="../CFBS/22.jpg" alt="Sports Facility" />
+        </div>
+
+        <!-- Booking Form -->
+        <form id="bookingForm">
+            <div class="form-group"><input type="text" name="studentId" placeholder="Student ID" required /></div>
+            <div class="form-group"><input type="text" name="studentName" placeholder="Your Name" required /></div>
+            <div class="form-group">
+                <select name="sport" id="sportSelect" required>
+                    <option value="Open_Stage">Open Stage</option>
+                </select>
+            </div>
+            <div class="form-group"><input type="text" id="dateInput" name="date" placeholder="Select Date" required />
+            </div>
+            <div class="form-group"><input type="text" id="startTime" name="startTime" placeholder="Start Time"
+                    required /></div>
+            <div class="form-group"><input type="text" id="endTime" name="endTime" placeholder="End Time" required />
+            </div>
+            <div class="form-group"><button type="submit">Book</button></div>
+            <div id="message"></div>
+        </form>
+    </div>
+    <br><br>
+    <footer>
+        <div class="footer-column">
+          <div class="Flogo">CFBS</div>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Sport Services</h3>
+          <ul>
+            <li><a href="cricket.html">Cricket</a></li>
+            <li><a href="basketball.html">Basketball</a></li>
+            <li><a href="footboll.html">Football</a></li>        
+            <li><a href="Kabbadi.html">Kabbadi</a></li>
+            <li><a href="Carrom.html">Carrom</a></li>
+            <li><a href="Chess.html">Chess</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="Auditorium.html">Auditorium</a></li>
+            <li><a href="Conference.html">Conference</a></li>
+            <li><a href="Open_Stage.html">Open Stage</a></li>
+            <li><a href="Seminar.html">Seminar Room</a></li>
+            <li><a href="chemistrylab.html">Science Lab</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../workgallery.html">Work Gallery</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../termsandconditions.html">Terms & Conditions</a></li>
+            <li><a href="../privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </footer>
+    <script src="Open_Stage.js"></script>
+    <script src="../footer.js"></script>
+    <script src="../js/loadNavbargames.js"></script>
+</body>
+
+</html>
