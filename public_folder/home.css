@@ -511,3 +511,232 @@ video {
     max-height: 250px;
   }
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .card-grid {
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 768px) {
+  .custom-buttons,
+  .split-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+
+  .split-inner {
+    font-size: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .experience-left {
+    max-width: 100%;
+  }
+
+  .experience-right {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .connect-section {
+    margin: 0 20px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial {
+    padding: 20px;
+  }
+
+  .profile img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 28px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .video-section {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .video-flip-container {
+    height: auto;
+  }
+
+  .video-inner video {
+    max-height: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .card-grid {
+    padding: 40px 20px;
+  }
+
+  .custom-buttons,
+  .split-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+
+  .split-inner {
+    font-size: 28px;
+  }
+
+  .experience-left,
+  .experience-right {
+    max-width: 100%;
+  }
+
+  .connect-section {
+    margin: 0 20px;
+    align-items: center;
+  }
+
+  .testimonial {
+    padding: 20px;
+  }
+
+  .profile img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 28px;
+    max-width: 100%;
+  }
+
+  .video-section {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .video-flip-container {
+    height: auto;
+  }
+
+  .video-inner video {
+    max-height: 250px;
+  }
+}@media (max-width: 600px) {
+  .video-section {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .video-inner video {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    max-height: 300px;
+    object-fit: contain;
+  }
+
+  .video-flip-container {
+    height: auto;
+  }
+
+  .video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* 🔧 Make video responsive */
+.video-section {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.video-flip-container {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.video-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.video-inner.flip {
+  transform: rotateY(180deg);
+}
+
+.video-inner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* 👇 Flip animation */
+@keyframes flipVideo {
+  0% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* ✅ Responsive fixes */
+@media (max-width: 768px) {
+  .video-section {
+    padding: 20px 10px;
+  }
+
+  .video-flip-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-inner video {
+    border-radius: 10px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-inner video {
+    object-fit: contain;
+  }
+}
